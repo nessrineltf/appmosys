@@ -1,0 +1,194 @@
+<!-- Hero Area -->
+<!-- <div class="hero-slider-two owl-carousel owl-theme">
+    <div class="hero-slider-two-item item-bg1">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-12"> -->
+<!--&lt;!&ndash;                            <div class="banner-content">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <span>Since 1992</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <h1>Digital Shipping Solution</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <p>At vero eos et accusamus et iusto odio vero ducimus qui blanditiis iusto voluptatum</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a routerLink="/contact" class="default-btn-one mr-3">Contact Us</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a routerLink="/" class="default-btn-two">Get A Quote</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        <div class="col-lg-6 col-md-12">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div class="order-form">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <h2>Track Your Order</h2>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                                <form>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <input type="email" class="form-control" placeholder="Tracking ID No.">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                                    <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <input type="email" class="form-control" placeholder="Enter Email">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                                    <div class="text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <button type="submit" class="default-btn-one">Track Now</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </form>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="hero-slider owl-carousel owl-theme">-->
+<!--        <div class="hero-slider-item item-bg1">-->
+<!--            <div class="d-table">-->
+<!--                <div class="d-table-cell">-->
+<!--                    <div class="container">-->
+<!--                        <div class="banner-content">-->
+
+<!--                            <h5>Trouvez un Labo en ligne</h5>-->
+<!--                            <p>Chercher mainenant un laboratoire</p>-->
+<!--                            &lt;!&ndash;                        <a  class="default-btn-one mr-3">Specialité</a>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                        <a routerLink="/" class="default-btn-two"></a>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                        <a  class="default-btn-one mr-3">Ville</a>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                        <form class="form-inline md-form mr-auto mb-4">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <input class="form-control mr-sm-2" type="text" placeholder="Nom du professionel de santé" aria-label="Search">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <select class="browser-default custom-select">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                <option selected>Spécialié</option>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                <option value="1">One</option>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            </select>&ndash;&gt;-->
+
+<!--                            &lt;!&ndash;                            <button mdbBtn size="sm" color="warning" outline="true" rounded="true" class="my-0 waves-light"&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                    mdbWavesEffect type="submit">Search</button>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                        </form>&ndash;&gt;-->
+<!--                            <form class="form-row">-->
+<!--                                &lt;!&ndash; Default input &ndash;&gt;-->
+<!--                                <div class="form-group col-md-3" >-->
+
+<!--                                    <input type="text" class="form-control"-->
+<!--                                           placeholder="Nom du professionnel de santé">-->
+<!--                                </div>-->
+
+<!--                                <div class="form-group col-md-2">-->
+
+<!--                                    <select  class="form-control" >-->
+<!--                                        <option>Ville</option>-->
+<!--                                        <option *ngFor="let v of  villesList" [label]="v.nom"></option>-->
+<!--                                    </select>-->
+<!--                                </div>-->
+<!--                                <button class="form-control col-md-2" mdbBtn size="sm" color="warning" outline="true" rounded="true" class="my-0 waves-light" mdbWavesEffect type="submit">Rechercher</button>-->
+<!--                            </form>-->
+                        <!-- </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div> -->
+<!-- End Hero Area -->
+
+<!-- Blog Area -->
+<div class="blog-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title ">
+            <span>Liste des Pharmacies </span>
+            <h2>Les pharmacies existant </h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6" *ngFor="let pharmacie of pharmacieListe" [value]="pharmacie" >
+                <div class="blog-card" >
+                    <a class="blog-image" routerLink="/blog-details"><img src="assets/img/blog/pharmacie.jpg" alt="image"></a>
+                    <div class="blog-text">
+                        <div class="text-body"></div>
+                        <h3>{{pharmacie.nomPharmacie}}</h3>
+                        <p class="mb-20">{{pharmacie.adresse}}</p>
+                        <p class="mb-20">{{pharmacie.typepharmacie}}</p>
+                        <p> De {{pharmacie.ouvertA}} ==>> {{pharmacie.fermerA}}</p>
+                        <p>{{pharmacie.telephone}}</p>
+                       
+                        <button class="default-btn-two ">Localiser</button>
+                    </div>
+                </div>
+            </div>
+
+<!--            <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">-->
+<!--                <div class="blog-card">-->
+<!--                    <a class="blog-image" routerLink="/blog-details"><img src="assets/img/blog/blog3.jpg" alt="image"></a>-->
+<!--                    <div class="blog-text">-->
+<!--                        <span class="meta-tag">Delivery</span>-->
+<!--                        <div class="date">24 August, 2020</div>-->
+<!--                        <h3><a routerLink="/blog-details">We introduce new boat and flight service</a></h3>-->
+<!--                        <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor</p>-->
+<!--                        <a routerLink="/blog-details" class="default-btn-two">Read More</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+<div class="blog-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title ">
+            <span>Liste des Para-Pharmacies </span>
+            <h2>Les Para-pharmacies existant </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6" *ngFor="let parapharmacie of parapharmacieListe" [value]="parapharmacie">
+                <div class="blog-card" >
+                    <a class="blog-image" routerLink="/blog-details"><img src="assets/img/blog/parapharmacie.jpg" alt="image"></a>
+                    <div class="blog-text">
+                        <div class="text-body"></div>
+                        <h3>{{parapharmacie.nomParaPharmacie}}</h3>
+                        <p class="mb-20">{{parapharmacie.adresse}}</p>
+                        <p> De {{parapharmacie.ouvertA}} ==>> {{parapharmacie.fermerA}}</p>
+                        <p>{{parapharmacie.telephone}}</p>
+                        <button class="default-btn-two " routerLink="/map">Localiser</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--            <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">-->
+            <!--                <div class="blog-card">-->
+            <!--                    <a class="blog-image" routerLink="/blog-details"><img src="assets/img/blog/blog3.jpg" alt="image"></a>-->
+            <!--                    <div class="blog-text">-->
+            <!--                        <span class="meta-tag">Delivery</span>-->
+            <!--                        <div class="date">24 August, 2020</div>-->
+            <!--                        <h3><a routerLink="/blog-details">We introduce new boat and flight service</a></h3>-->
+            <!--                        <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor</p>-->
+            <!--                        <a routerLink="/blog-details" class="default-btn-two">Read More</a>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+        </div>
+    </div>
+</div>
+<!-- End Blog Area -->
+
+<!-- Newsletter Area -->
+<!--<div class="newsletter-area">-->
+<!--    <div class="container">-->
+<!--        <div class="newsletter-content">-->
+<!--            <div class="row align-items-center">-->
+<!--                <div class="col-lg-5 col-md-12">-->
+<!--                    <div class="newsletter-title">-->
+<!--                        <h3>Abonnez-vous à notre newsletter:</h3>-->
+<!--                        <p> Axé sur l’entreprise médicale </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-7 col-md-12">-->
+<!--                    <div class="newsletter-form">-->
+<!--                        <form>-->
+<!--                            <input type="email" class="form-control" placeholder="Email Address" required autocomplete="off">-->
+<!--                            <button type="submit" class="btn btn-primary">s'inscrire</button>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!-- End Newsletter Area -->

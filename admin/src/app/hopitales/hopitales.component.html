@@ -1,0 +1,135 @@
+<section id="shopping-cart">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Hôpitales</h4>
+        </div>
+        <div class="card-content">
+          <button type="button" class="btn btn-primary round mr-1 mb-1" style="float: right" (click)="open(content)">Ajouter un nouveaux hôpitale</button>
+          <ng-template #content let-c="close" let-d="dismiss" style="background-color: #0B1F3A">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" style="color: black;margin: 0 auto">Ajouter un Hôpitale</h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                  <span aria-hidden="true" style="color: white">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="striped-rows"  [formGroup]="hopitalForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="striped-form-1">Nom Hopitale</label>
+                    <div class="col-md-9">
+                      <input type="text" id="striped-form-1" class="form-control" name="nome" placeholder="Nom Hopitale" [ngClass]="{ 'is-invalid': submitted && f.nomhopitale.errors }" formControlName="nomhopitale">
+                      <div *ngIf="submitted && f.nomhopitale.errors" class="invalid-feedback">
+                        <div *ngIf="f.nomhopitale.errors.required">champ obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="striped-form-1">Nom Directeur</label>
+                    <div class="col-md-9">
+                      <input type="text" id="striped-form-2" class="form-control" name="nome" placeholder="Nom Directeur" [ngClass]="{ 'is-invalid': submitted && f.nomdirecteur.errors }" formControlName="nomdirecteur">
+                      <div *ngIf="submitted && f.nomdirecteur.errors" class="invalid-feedback">
+                        <div *ngIf="f.nomdirecteur.errors.required">champ obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="striped-form-3">Tél Urgence</label>
+                    <div class="col-md-9">
+                      <input type="text" id="striped-form-3" class="form-control" name="nome" placeholder="Tél Urgence" [ngClass]="{ 'is-invalid': submitted && f.tel_urgence.errors }" formControlName="tel_urgence">
+                      <div *ngIf="submitted && f.tel_urgence.errors" class="invalid-feedback">
+                        <div *ngIf="f.tel_urgence.errors.required">champ obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="striped-form-4">Tél secondaire</label>
+                    <div class="col-md-9">
+                      <input type="text" id="striped-form-4" class="form-control" name="nome" placeholder="Tél Urgence" [ngClass]="{ 'is-invalid': submitted && f.tel_secondaire.errors }" formControlName="tel_secondaire">
+                      <div *ngIf="submitted && f.tel_secondaire.errors" class="invalid-feedback">
+                        <div *ngIf="f.tel_secondaire.errors.required">champ obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="striped-form-5">Adresse</label>
+                    <div class="col-md-9">
+                      <input type="text" id="striped-form-5" class="form-control" name="nome" placeholder="Adresse" [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }" formControlName="adresse">
+                      <div *ngIf="submitted && f.adresse.errors" class="invalid-feedback">
+                        <div *ngIf="f.adresse.errors.required">champ obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row" >
+                    <label class="col-md-3 label-control" >Ville</label>
+                    <div class="col-md-9" >
+                      <select  class="form-control" formControlName="idv">
+                        <option disabled >Ville</option>
+                        <option *ngFor="let v of  villesList"  value="{{v.id}}">{{v.nom}}</option>
+
+
+                      </select>
+                    </div>
+                  </div>
+                  <!--<div class="form-group row">-->
+                  <!--<label class="col-md-3 label-control" for="striped-form-6">Role</label>-->
+                  <!--<select id="striped-form-6" name="priority" class="col-md-9">-->
+                  <!--<option value="Low">Low</option>-->
+                  <!--<option value="Medium">Medium</option>-->
+                  <!--<option value="High">High</option>-->
+                  <!--</select>-->
+                  <!--</div>-->
+                  <div class="foot mt-3"  style="float: right">
+                    <button type="button" class="btn btn-secondary mr-2"  (click)="c('Close click')"><i class="ft-x mr-1"></i>Annuller</button>
+                    <button type="onSubmit" class="btn btn-primary "><i class="ft-check-square mr-1"></i>Enregistrer</button>
+
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+
+            <!--<div class="modal-footer">-->
+            <!--<button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>-->
+            <!--</div>-->
+          </ng-template>
+          <div class="card-body table-responsive">
+            <table class="table text-center m-0">
+              <thead>
+              <tr>
+                <th>Image</th>
+                <th>Nom Hopital</th>
+                <th>Tel_Urgence</th>
+                <th>Tel_secondaire</th>
+                <th>Ville</th>
+                <th>Nom Directeur</th>
+                <th>Delete</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let hop of hopitalList">
+                <td><img src="../../assets/img/hopital-removebg-preview.png" alt="product" style="height: 75px;"></td>
+                <td>{{hop.nomhopitale}}</td>
+                <td>{{hop.tel_urgence}}</td>
+                <td>{{hop.tel_secondaire}}</td>
+                <td>{{hop.nomdirecteur}}</td>
+                <td>{{hop.ville.nom}}</td>
+                <td>
+                  <a href="javascript:;" class="danger" (click)="deleteHopital(hop.id)">
+                    <i class="ft-trash font-medium-3"></i>
+                  </a>
+                </td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

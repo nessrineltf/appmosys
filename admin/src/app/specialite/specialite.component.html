@@ -1,0 +1,64 @@
+<section id="list">
+
+  <div class="row match-height">
+<div class="col-10" style="margin: 0 auto">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">spécialites</h4>
+      <button type="button" class="btn btn-primary round mr-1 mb-1" style="float: right" (click)="open(content)">Ajouter une spécialite</button>
+      <ng-template #content let-c="close" let-d="dismiss" style="background-color: #0B1F3A">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" style="color: black;margin: 0 auto">Ajouter une nouvelle spécialite</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+              <span aria-hidden="true" style="color: white">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="striped-rows"  [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              <div class="form-group row">
+                <label class="col-md-6 label-control" for="striped-form-1">Nom de spécialite</label>
+                <div class="col-md-12">
+                  <input type="text" id="striped-form-1" class="form-control" name="nom" placeholder="nom specialite" [ngClass]="{ 'is-invalid': submitted && f.nom_specialite.errors }" formControlName="nom_specialite">
+                  <div *ngIf="submitted && f.nom_specialite.errors" class="invalid-feedback">
+                    <div *ngIf="f.nom_specialite.errors.required">champ obligatoire</div>
+                  </div>
+                </div>
+              </div>
+              <div class="foot" >
+                <button type="button" class="btn btn-secondary mr-2"  (click)="c('Close click');onReset()"><i class="ft-x mr-1"></i>Annuller</button>
+                <button type="submit" class="btn btn-primary "><i class="ft-check-square mr-1"></i>Enregistrer</button>
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <!--<div class="modal-footer">-->
+        <!--<button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>-->
+        <!--</div>-->
+      </ng-template>
+    </div>
+    <div class="card-content">
+      <div class="card-body">
+        <ul class="list-group" *ngFor="let group of specialites" >
+          <li class="list-group-item" >
+            <span class="badge badge-danger mr-2" (click)="deleteSpecialite(group.id)" style="cursor: pointer"><i class="ft ft-trash-2"></i></span>  &nbsp; &nbsp;{{group.nom_specialite}}
+          </li>
+
+<!--          <li class="list-group-item">-->
+<!--            <span class="badge badge-danger mr-2"><i class="ft ft-trash-2"></i></span> Cras justo odio-->
+<!--          </li>-->
+<!--          <li class="list-group-item">-->
+<!--            <span class="badge badge-danger mr-2"><i class="ft ft-trash-2"></i></span> Cras justo odio-->
+<!--          </li>-->
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+

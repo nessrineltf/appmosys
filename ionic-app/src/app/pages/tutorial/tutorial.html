@@ -1,0 +1,39 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color='primary' (click)="startApp()" [hidden]="!showSkip">sauter</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager="false">
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-1.png" class="slide-image" />
+      <h2 class="slide-title">
+        Bienvenue à
+        <b style="color: #3bc7c4">MO-Sys</b>
+      </h2>
+      <b>Votre <strong>Support médical </strong> en ligne </b>
+      <h3>Trouvez un médecin et prenez rendez-vous en ligne</h3>
+      <p>Chercher mainenant un medecin</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-2.png" class="slide-image" />
+      <h2 class="slide-title">C'est quoi MO-SYS?</h2>
+      <h3>Solution sûre, rapide et facile pour vous</h3>
+      <p> MO-SYS est une plateforme innovante qui vous permet de trouver rapidement un médecin le plus proche de chez vous et de prendre un rendez-vous en ligne gratuitement. </p>
+
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image" />
+      <h2 class="slide-title">Prêt d'utiliser notre app ?</h2>
+      <ion-button fill="clear" (click)="startApp()">
+        Continuer
+        <ion-icon slot="end" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,128 @@
+<section id="light">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Liste des laboratoires</h4>
+        </div>
+        <div class="card-content">
+          <button type="button" class="btn btn-primary round mr-1 mb-1" style="float: right" (click)="open(content)">Ajouter un nouveaux laboratoire</button>
+          <ng-template #content let-c="close" let-d="dismiss" style="background-color: #0B1F3A">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" style="color: black;margin: 0 auto">Ajouter un laboratoire</h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                  <span aria-hidden="true" style="color: white">&times;</span>
+                </button>
+              </div>
+             
+              <div class="modal-body">
+                <form class="striped-rows"  [formGroup]="labosForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="striped-form-1">Nom Laboratoire</label>
+                    <div class="col-md-9">
+                      <input type="text" id="striped-form-1" class="form-control" name="nome" placeholder="Nom laboratoire" [ngClass]="{ 'is-invalid': submitted && f.nomLabo.errors }" formControlName="nomLabo">
+                      <div *ngIf="submitted && f.nomLabo.errors" class="invalid-feedback">
+                        <div *ngIf="f.nomLabo.errors.required">champ obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="striped-form-4">Description</label>
+                    <div class="col-md-9">
+                      <textarea type="text" id="striped-form-4" class="form-control" name="nome" placeholder="description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" formControlName="description" rows="3"></textarea>
+                      <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                        <div *ngIf="f.description.errors.required">champ obligatoire</div>
+                      </div>                   
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="striped-form-3">Téléphone</label>
+                    <div class="col-md-9">
+                      <input type="text" id="striped-form-3" class="form-control" name="nome" placeholder="Téléphone" [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }" formControlName="telephone">
+                      <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                        <div *ngIf="f.telephone.errors.required">champ obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div class="form-group row">
+                    <label class="col-md-3 label-control" for="striped-form-5">Adresse</label>
+                    <div class="col-md-9">
+                      <input type="text" id="striped-form-5" class="form-control" name="nome" placeholder="Adresse" [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }" formControlName="adresse">
+                      <div *ngIf="submitted && f.adresse.errors" class="invalid-feedback">
+                        <div *ngIf="f.adresse.errors.required">champ obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row" >
+                    <label class="col-md-3 label-control" >Ville</label>
+                    <div class="col-md-9" >
+                      <select  class="form-control" formControlName="idv">
+                        <option disabled >Ville</option>
+                        <option *ngFor="let v of  villesList"  value="{{v.id}}">{{v.nom}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!--<div class="form-group row">-->
+                  <!--<label class="col-md-3 label-control" for="striped-form-6">Role</label>-->
+                  <!--<select id="striped-form-6" name="priority" class="col-md-9">-->
+                  <!--<option value="Low">Low</option>-->
+                  <!--<option value="Medium">Medium</option>-->
+                  <!--<option value="High">High</option>-->
+                  <!--</select>-->
+                  <!--</div>-->
+                  <div class="foot mt-3"  style="float: right">
+                    <button type="button" class="btn btn-secondary mr-2"  (click)="c('Close click')"><i class="ft-x mr-1"></i>Annuller</button>
+                    <button type="onSubmit" class="btn btn-primary "><i class="ft-check-square mr-1"></i>Enregistrer</button>
+
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+
+            <!--<div class="modal-footer">-->
+            <!--<button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>-->
+            <!--</div>-->
+          </ng-template>
+          <div class="card-body table-responsive">
+            <table class="table text-center m-0">
+              <thead>
+              <tr>
+                <th>Image</th>
+                <th>Nom Labo</th>
+                <th>Téléphone</th>
+                <th>Description</th>
+                <th>Ville</th>
+                <th>Adresse</th>
+            
+                <th>Delete</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let labo of labosList">
+                <td><img src="../../assets/img/labo.png" alt="product" style="height: 75px;"></td>
+                <td>{{labo.nomLabo}}</td>
+                <td>{{labo.telephone}}</td>
+                <td>{{labo.description}}</td>
+                <td>{{labo.ville.nom}}</td>
+                <td>{{labo.adresse}}</td>
+            
+                <td>
+                  <a href="javascript:;" class="danger" (click)="deletelabo(labo.id)">
+                    <i class="ft-trash font-medium-3"></i>
+                  </a>
+                </td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

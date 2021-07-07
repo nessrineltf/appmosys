@@ -1,0 +1,525 @@
+<!-- Hero Slider Area -->
+<div class="hero-slider-three owl-carousel owl-theme">
+    <div class="hero-slider-three-item item-bg1">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="row align-items-center mt-50">
+                        <div class="col-lg-8 col-md-8">
+                            <div class="slider-three-text">
+                                <h4>Solution digitale pour locaiser les labos</h4>
+                                <p></p>
+                                <a routerLink="/contact" class="default-btn-one mr-3">Nous Contacter </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4">
+                            <div class="popup-video">
+                                <div class="video-btn">
+                                    <a href="https://www.youtube.com/watch?v=Qc9hDvNfy2I" class="popup-youtube">
+                                        <i class="bx bx-play whiteText"></i>
+                                        <span class="ripple pinkBg"></span>
+                                        <span class="ripple pinkBg"></span>
+                                        <span class="ripple pinkBg"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    <div class="hero-slider-three-item item-bg2 ">-->
+<!--        <div class="d-table">-->
+<!--            <div class="d-table-cell">-->
+<!--                <div class="container">-->
+<!--                    <div class="row align-items-center mt-50">-->
+<!--                        <div class="col-lg-8 col-md-8">-->
+<!--                            <div class="slider-three-text">-->
+<!--                                <span>Since 1992</span>-->
+<!--                                <h1>Digital Solution for Transportation and Logistic </h1>-->
+<!--                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>-->
+<!--                                <a routerLink="/contact" class="default-btn-one mr-3">Contact Us</a>-->
+<!--                                <a routerLink="/contact" class="default-btn-two">Get A Quote</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="col-lg-4 col-md-4">-->
+<!--                            <div class="popup-video">-->
+<!--                                <div class="video-btn">-->
+<!--                                    <a href="https://www.youtube.com/watch?v=bk7McNUjWgw" class="popup-youtube">-->
+<!--                                        <i class="bx bx-play whiteText"></i>-->
+<!--                                        <span class="ripple pinkBg"></span>-->
+<!--                                        <span class="ripple pinkBg"></span>-->
+<!--                                        <span class="ripple pinkBg"></span>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="hero-slider-three-item item-bg3">-->
+<!--        <div class="d-table">-->
+<!--            <div class="d-table-cell">-->
+<!--                <div class="container">-->
+<!--                    <div class="row align-items-center mt-50">-->
+<!--                        <div class="col-lg-8 col-md-8">-->
+<!--                            <div class="slider-three-text">-->
+<!--                                <span>Since 1992</span>-->
+<!--                                <h1>Digital Solution for Transportation and Logistic </h1>-->
+<!--                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>-->
+<!--                                <a routerLink="/contact" class="default-btn-one mr-3">Contact Us</a>-->
+<!--                                <a routerLink="/contact" class="default-btn-two">Get A Quote</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="col-lg-4 col-md-4">-->
+<!--                            <div class="popup-video">-->
+<!--                                <div class="video-btn">-->
+<!--                                    <a href="https://www.youtube.com/watch?v=bk7McNUjWgw" class="popup-youtube">-->
+<!--                                        <i class="bx bx-play whiteText"></i>-->
+<!--                                        <span class="ripple pinkBg"></span>-->
+<!--                                        <span class="ripple pinkBg"></span>-->
+<!--                                        <span class="ripple pinkBg"></span>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+</div>
+<!-- End Hero Slider Area -->
+
+<!-- Services Slider Area -->
+<div class="blog-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <span>Liste des Laboratoires </span>
+            <h2>Liste des Laboratoires existant</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6" *ngFor="let labo of laboList" [value]="labo">
+                <div class="blog-card" >
+                    <a class="blog-image"><img src="assets/img/freight/labo.png" alt="image"></a>
+                    <div class="blog-text">
+                        <div class="text-body"></div>
+                       
+                        <p>{{labo.nomLabo}}</p>
+                        <p>{{labo.adresse}}</p>
+                        <p>{{labo.description}}</p>
+                        <p>{{labo.telephone}}</p>
+                        <button class="default-btn-two ">Localiser</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--            <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">-->
+            <!--                <div class="blog-card">-->
+            <!--                    <a class="blog-image" routerLink="/blog-details"><img src="assets/img/blog/blog3.jpg" alt="image"></a>-->
+            <!--                    <div class="blog-text">-->
+            <!--                        <span class="meta-tag">Delivery</span>-->
+            <!--                        <div class="date">24 August, 2020</div>-->
+            <!--                        <h3><a routerLink="/blog-details">We introduce new boat and flight service</a></h3>-->
+            <!--                        <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor</p>-->
+            <!--                        <a routerLink="/blog-details" class="default-btn-two">Read More</a>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+        </div>
+        <!-- <div class="services-slider-two owl-carousel owl-theme" > -->
+            <!-- <div >
+            <div class="service-card-two" *ngFor="let Labo of laboList">
+                <img class="freight-image" src="assets/img/freight/labo.png" alt="image">
+                <div class="service-caption">
+                   
+                    <button class="default-btn-two">Localiser</button>
+                </div>
+            </div>
+            </div> -->
+
+<!--            <div class="service-card-two">-->
+<!--                <img class="freight-image" src="assets/img/freight/freight2.jpg" alt="image">-->
+<!--                <div class="service-caption">-->
+<!--                    <h3>Ocean Freight</h3>-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>-->
+<!--                    <a routerLink="/services-details" class="default-btn-two">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="service-card-two">-->
+<!--                <img class="freight-image" src="assets/img/freight/freight3.jpg" alt="image">-->
+<!--                <div class="service-caption">-->
+<!--                    <h3>Air Freight</h3>-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>-->
+<!--                    <a routerLink="/services-details" class="default-btn-two">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="service-card-two">-->
+<!--                <img class="freight-image" src="assets/img/freight/freight1.jpg" alt="image">-->
+<!--                <div class="service-caption">-->
+<!--                    <h3>Road Freight</h3>-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>-->
+<!--                    <a routerLink="/services-details" class="default-btn-two">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="service-card-two">-->
+<!--                <img class="freight-image" src="assets/img/freight/freight2.jpg" alt="image">-->
+<!--                <div class="service-caption">-->
+<!--                    <h3>Ocean Freight</h3>-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>-->
+<!--                    <a routerLink="/services-details" class="default-btn-two">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="service-card-two">-->
+<!--                <img class="freight-image" src="assets/img/freight/freight3.jpg" alt="image">-->
+<!--                <div class="service-caption">-->
+<!--                    <h3>Air Freight</h3>-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>-->
+<!--                    <a routerLink="/services-details" class="default-btn-two">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+<!-- </div> -->
+<!-- End Services Slider Area -->
+
+<!--&lt;!&ndash; Safe Area &ndash;&gt;-->
+<!--<div class="safe-area ptb-100">-->
+<!--    <div class="container">-->
+<!--        <div class="row align-items-center">-->
+<!--            <div class="col-lg-6 col-md-12">-->
+<!--                <div class="about-img-three">-->
+<!--                    <img src="assets/img/about/about3.jpg" alt="Image">-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="col-lg-6 col-md-12">-->
+<!--                <div class="about-contant-others">-->
+<!--                    <div class="section-title">-->
+<!--                        <span>About Us</span>-->
+<!--                        <h2>Safe and Faster Logistic Service Near You</h2>-->
+<!--                    </div>-->
+
+<!--                    <div class="about-two-text">-->
+<!--                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam quia voluptas.</p>-->
+<!--                        <p class="mb-30">Accusantium doloremque, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</p>-->
+<!--                        <a routerLink="/contact" class="default-btn-one mr-3">Contact Us</a>-->
+<!--                        <div class="watch-video">-->
+<!--                            <div class="video-btn">-->
+<!--                                <a href="https://www.youtube.com/watch?v=bk7McNUjWgw" class="popup-youtube"><i class="bx bx-play whiteText"></i> Watch Video</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--&lt;!&ndash; End Safe Area &ndash;&gt;-->
+
+<!--&lt;!&ndash; Shipmante Area &ndash;&gt;-->
+<!--<div class="shipmante-area shipmante-area-bg">-->
+<!--    <div class="container">-->
+<!--        <div class="row align-items-center">-->
+<!--            <div class="col-lg-7 col-md-12">-->
+<!--                <div class="shipmante-text">-->
+<!--                    <h2>Make an Easy<br> Shipment</h2>-->
+<!--                    <p>Need help..! We are here to help you</p>-->
+<!--                    <a routerLink="/contact">Contant Us</a>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="col-lg-5 col-md-12">-->
+<!--                <div class="shipmante-btn">-->
+<!--                    <a href="https://www.youtube.com/watch?v=bk7McNUjWgw" class="popup-youtube">-->
+<!--                        <i class="bx bx-play whiteText"></i>-->
+<!--                        <span class="ripple pinkBg"></span>-->
+<!--                        <span class="ripple pinkBg"></span>-->
+<!--                        <span class="ripple pinkBg"></span>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--&lt;!&ndash; End Shipmante Area &ndash;&gt;-->
+
+<!--&lt;!&ndash; Clients Area &ndash;&gt;-->
+<!--<div class="clients-area pt-100 pb-70">-->
+<!--    <div class="container">-->
+<!--        <div class="section-title">-->
+<!--            <span>Clients Review</span>-->
+<!--            <h2>Clients Around The World Makes Us Special</h2>-->
+<!--        </div>-->
+
+<!--        <div class="clients-slider owl-carousel owl-theme">-->
+<!--            <div class="clients-slider-item">-->
+<!--                <div class="quote-icon">-->
+<!--                    <i class='bx bxs-quote-right'></i>-->
+<!--                </div>-->
+<!--                <div class="item-contant">-->
+<!--                    <div class="clients-image">-->
+<!--                        <img src="assets/img/clients/client1.jpg" alt="image">-->
+<!--                    </div>-->
+<!--                    <h3>Minthy Sananda</h3>-->
+<!--                    <span>CEO of LTD company</span>-->
+<!--                    <div class="rating">-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                    </div>-->
+<!--                    <p>On the other hand, we denounce with righteous indignation dislike men who are so beguiled and.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="clients-slider-item">-->
+<!--                <div class="quote-icon">-->
+<!--                    <i class='bx bxs-quote-right'></i>-->
+<!--                </div>-->
+<!--                <div class="item-contant">-->
+<!--                    <div class="clients-image">-->
+<!--                        <img src="assets/img/clients/client2.jpg" alt="image">-->
+<!--                    </div>-->
+<!--                    <h3>Ramos Jhon Smith </h3>-->
+<!--                    <span>CEO of LTD company</span>-->
+<!--                    <div class="rating">-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                    </div>-->
+<!--                    <p>On the other hand, we denounce with righteous indignation dislike men who are so beguiled and.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="clients-slider-item">-->
+<!--                <div class="quote-icon">-->
+<!--                    <i class='bx bxs-quote-right'></i>-->
+<!--                </div>-->
+<!--                <div class="item-contant">-->
+<!--                    <div class="clients-image">-->
+<!--                        <img src="assets/img/clients/client4.jpg" alt="image">-->
+<!--                    </div>-->
+<!--                    <h3>JACK Smith </h3>-->
+<!--                    <span>CEO of LTD company</span>-->
+<!--                    <div class="rating">-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                        <i class='bx bxs-star'></i>-->
+<!--                    </div>-->
+<!--                    <p>On the other hand, we denounce with righteous indignation dislike men who are so beguiled and.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--&lt;!&ndash; End Clients Area &ndash;&gt;-->
+
+<!--&lt;!&ndash; Floza Shipping Area &ndash;&gt;-->
+<!--<div class="shipping-area ptb-100">-->
+<!--    <div class="container">-->
+<!--        <div class="row align-items-center">-->
+<!--            <div class="col-lg-6 col-md-12">-->
+<!--                <div class="shipping-img">-->
+<!--                    <img src="assets/img/shipping/shipping1.jpg" alt="image">-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="col-lg-6 col-md-12">-->
+<!--                <div class="shipping-text">-->
+<!--                    <div class="shipping-title">-->
+<!--                        <h2>Floza Shipping Make It More Easy</h2>-->
+<!--                    </div>-->
+<!--                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique culpa qui officia deserunt mollitia animi, id est laborum et dolorum. Et harum quidem rerum facilis est et expedita distinctio</p>-->
+<!--                    <div class="shipping-card">-->
+<!--                        <div class="shipping-contant">-->
+<!--                            <div class="shipping-sign">-->
+<!--                                <img src="assets/img/sign.png" alt="image">-->
+<!--                            </div>-->
+<!--                            <div class="shipping-image">-->
+<!--                                <img src="assets/img/clients/client1.png" alt="image">-->
+<!--                            </div>-->
+<!--                            <h3>John Doe</h3>-->
+<!--                            <span>CEO, Floza</span>-->
+<!--                            <p>Nor again is there anyone who loves or pursues or desires to.</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--&lt;!&ndash; End Floza Shipping Area &ndash;&gt;-->
+
+<!--&lt;!&ndash; Frequently Area &ndash;&gt;-->
+<!--<div class="frequently-area ptb-100">-->
+<!--    <div class="container">-->
+<!--        <div class="row align-items-center">-->
+<!--            <div class="col-lg-6 col-md-12">-->
+<!--                <div class="frequently-accrodion">-->
+<!--                    <h3>Frequently Asked Questions</h3>-->
+<!--                    <p>Have Questions? <a routerLink="/faq">Visit Our Help Center</a></p>-->
+
+<!--                    <div id="accordion">-->
+<!--                        <div class="accrodion-drawer">-->
+<!--                            <h3>How to estimate the total cost of shipment? <i class='bx bx-chevron-right'></i></h3>-->
+
+<!--                            <div class="drawer is-hidden">-->
+<!--                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, atque, alias! Repellendus saepe pariatur quidem qui voluptatibus iure ab illum.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="accrodion-drawer">-->
+<!--                            <h3>Where is the comapy located?<i class='bx bx-chevron-right'></i></h3>-->
+
+<!--                            <div class="drawer is-hidden">-->
+<!--                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, atque, alias! Repellendus saepe pariatur quidem qui voluptatibus iure ab illum.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="accrodion-drawer">-->
+<!--                            <h3>How much time do you take in delivery?<i class='bx bx-chevron-right'></i></h3>-->
+
+<!--                            <div class="drawer is-hidden">-->
+<!--                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, atque, alias! Repellendus saepe pariatur quidem qui voluptatibus iure ab illum.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="col-lg-6 col-md-12">-->
+<!--                <div class="frequently-image">-->
+<!--                    <div class="frequently-text">-->
+<!--                        <h3>Take Your Goods Anywhere Safely And on Time</h3>-->
+<!--                        <p>Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>-->
+<!--                        <a href="tel:+0123456789">+0123 456 789</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--&lt;!&ndash; End Frequently Area &ndash;&gt;-->
+
+<!-- Blog Area -->
+<!--<div class="blog-area ptb-100">-->
+<!--    <div class="container">-->
+<!--        <div class="section-title text-left ml-0">-->
+<!--            <span>Our Blog</span>-->
+<!--            <h2>Read Our Latest News and Blogs</h2>-->
+<!--        </div>-->
+<!--         -->
+<!--        <div class="blog-slider owl-carousel owl-theme">-->
+<!--            <div class="blog-card">-->
+<!--                <a class="blog-image" routerLink="/blog-details"><img src="assets/img/blog/blog4.jpg" alt="image"></a>-->
+<!--                <div class="blog-text">-->
+<!--                    <span class="meta-tag">Delivery</span>-->
+<!--                    <div class="date">22 August 2020</div>-->
+<!--                    <h3><a routerLink="/blog-details">We ensure you best the quality services</a></h3>-->
+<!--                    <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor</p>-->
+<!--                    <a routerLink="/blog-details" class="default-btn-two">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="blog-card">-->
+<!--                <a class="blog-image" routerLink="/blog-details"><img src="assets/img/blog/blog7.jpg" alt="image"></a>-->
+<!--                <div class="blog-text">-->
+<!--                    <span class="meta-tag">Delivery</span>-->
+<!--                    <div class="date">22 August 2020</div>-->
+<!--                    <h3><a routerLink="/blog-details">We ensure you best the quality services</a></h3>-->
+<!--                    <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor</p>-->
+<!--                    <a routerLink="/blog-details" class="default-btn-two">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="blog-card">-->
+<!--                <a class="blog-image" routerLink="/blog-details"><img src="assets/img/blog/blog8.jpg" alt="image"></a>-->
+<!--                <div class="blog-text">-->
+<!--                    <span class="meta-tag">Delivery</span>-->
+<!--                    <div class="date">22 August 2020</div>-->
+<!--                    <h3><a routerLink="/blog-details">Our customer around the world satisty with it</a></h3>-->
+<!--                    <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor</p>-->
+<!--                    <a routerLink="/blog-details" class="default-btn-two">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="blog-card">-->
+<!--                <a class="blog-image" routerLink="/blog-details"><img src="assets/img/blog/blog4.jpg" alt="image"></a>-->
+<!--                <div class="blog-text">-->
+<!--                    <span class="meta-tag">Delivery</span>-->
+<!--                    <div class="date">22 August 2020</div>-->
+<!--                    <h3><a routerLink="/blog-details">Introduce new boat service in this spring</a></h3>-->
+<!--                    <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor</p>-->
+<!--                    <a routerLink="/blog-details" class="default-btn-two">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="blog-card">-->
+<!--                <a class="blog-image" routerLink="/blog-details"><img src="assets/img/blog/blog7.jpg" alt="image"></a>-->
+<!--                <div class="blog-text">-->
+<!--                    <span class="meta-tag">Delivery</span>-->
+<!--                    <div class="date">22 August 2020</div>-->
+<!--                    <h3><a routerLink="/blog-details">We ensure you best the quality services</a></h3>-->
+<!--                    <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor</p>-->
+<!--                    <a routerLink="/blog-details" class="default-btn-two">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="blog-card">-->
+<!--                <a class="blog-image" routerLink="/blog-details"><img src="assets/img/blog/blog8.jpg" alt="image"></a>-->
+<!--                <div class="blog-text">-->
+<!--                    <span class="meta-tag">Delivery</span>-->
+<!--                    <div class="date">22 August 2020</div>-->
+<!--                    <h3><a routerLink="/blog-details">We ensure you best the quality services</a></h3>-->
+<!--                    <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor</p>-->
+<!--                    <a routerLink="/blog-details" class="default-btn-two">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!-- End Blog Area -->
+
+<!-- Newsletter Area -->
+<!--<div class="newsletter-area">-->
+<!--    <div class="container">-->
+<!--        <div class="newsletter-content">-->
+<!--            <div class="row align-items-center">-->
+<!--                <div class="col-lg-5 col-md-12">-->
+<!--                    <div class="newsletter-title">-->
+<!--                        <h3>Subscribe to our newsletter:</h3>-->
+<!--                        <p>Focused on the transport and logistic industry</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-7 col-md-12">-->
+<!--                    <div class="newsletter-form">-->
+<!--                        <form>-->
+<!--                            <input type="email" class="form-control" placeholder="Email Address">-->
+<!--                            <button type="submit" class="btn btn-primary">Subscribe</button>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!-- End Newsletter Area -->

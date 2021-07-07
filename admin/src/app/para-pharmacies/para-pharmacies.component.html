@@ -1,0 +1,176 @@
+<section id="header-footer">
+
+  <div class="row mt-2">
+    <div class="col-12">
+      <div class="content-header">Liste Para-Pharmacies
+        <button type="button" class="btn btn-primary round mr-1 mb-1" style="float: right" (click)="open(content)">Ajouter une para-pharmacie</button>
+        <ng-template #content let-c="close" let-d="dismiss" style="background-color: #0B1F3A">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" style="color: black;margin: 0 auto">Ajouter une Para-Pharmacie</h4>
+              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true" style="color: white">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" >
+              <form  class="striped-rows" [formGroup]="pharmacieForm" (ngSubmit)="onSubmit()">
+                <div class="form-group row">
+                  <label class="col-md-3 label-control" for="striped-form-1">Nom Para</label>
+                  <div class="col-md-9">
+                    <input type="text" id="striped-form-1" class="form-control" name="nome" placeholder="nom" [ngClass]="{ 'is-invalid': submitted && f.nompara.errors }" formControlName="nompara">
+                    <div *ngIf="submitted && f.nompara.errors" class="invalid-feedback">
+                      <div *ngIf="f.nompara.errors.required">champ obligatoire</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 label-control" for="striped-form-2">Adresse</label>
+                  <div class="col-md-9">
+                    <input type="text" id="striped-form-2" class="form-control" name="nome" placeholder="adresse" [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }" formControlName="adresse">
+                    <div *ngIf="submitted && f.adresse.errors" class="invalid-feedback">
+                      <div *ngIf="f.adresse.errors.required">champ obligatoire</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 label-control" for="striped-form-3">Télephone</label>
+                  <div class="col-md-9">
+                    <input type="number" id="striped-form-3" class="form-control" name="nome" placeholder="telephone" [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }" formControlName="telephone">
+                    <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                      <div *ngIf="f.telephone.errors.required">champ obligatoire</div>
+                    </div>                   </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 label-control" for="striped-form-4">Description</label>
+                  <div class="col-md-9">
+                    <textarea type="text" id="striped-form-4" class="form-control" name="nome" placeholder="description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" formControlName="description" rows="3"></textarea>
+                    <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                      <div *ngIf="f.description.errors.required">champ obligatoire</div>
+                    </div>                   </div>
+                </div>
+
+                <div class="form-group row" >
+                  <label class="col-md-3 label-control" >Ville</label>
+                  <div class="col-md-9" >
+                    <select  class="form-control" formControlName="idv">
+                      <option disabled >Ville</option>
+                      <option *ngFor="let v of  villesList"  value="{{v.id}}">{{v.nom}}</option>
+
+
+                    </select>
+                  </div>
+                </div>
+                <div class="foot mt-3" style="float: right">
+                  <button type="button" class="btn btn-secondary mr-2"  (click)="c('Close click')"><i class="ft-x mr-1"></i>Annuller</button>
+                  <button type="onSubmit" class="btn btn-primary " ><i class="ft-check-square mr-1"></i>Enregistrer</button>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+          <!--<div class="modal-footer">-->
+          <!--<button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>-->
+          <!--</div>-->
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card-group">
+
+        <div class="card-deck " style="margin-right: 0.2rem" *ngFor="let para of pharmacieList">
+          <div class="card" style="height:242px ">
+            <div class="card-content">
+              <img class="card-img-top img-fluid" src="../../assets/img/para.jpg" alt="Card image cap" style=" width: 200px;;height: 40%;border: 1px solid grey;">
+              <div class="card-body">
+                <h4 class="card-title">{{para.nompara}}</h4>
+                <a href="javascript:;" class="danger ml-1" style="float: right" (click)="deletepharmacie(para.id)">
+                  <i class="ft-trash font-medium-3"></i>
+                </a>&nbsp;&nbsp;&nbsp;
+                <a href="javascript:;" class="success" style="float: right;color: black!important;"  (click)="open(content_edit);recuper(para.id,para.ville.id,para.nompara,para.description,para.adresse,para.telephone)">
+                  <i class="ft-edit font-medium-3"></i>
+                </a>
+                <ng-template #content_edit let-c="close" let-d="dismiss" style="background-color: #0B1F3A">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: black;margin: 0 auto">Modifier Para</h4>
+                      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true" style="color: white">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" >
+                      <form  class="striped-rows" [formGroup]="pharmacieForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group row">
+                          <label class="col-md-3 label-control" for="striped-form-1">Nom Para</label>
+                          <div class="col-md-9">
+                            <input type="text" id="striped-form-1" class="form-control" name="nome" placeholder="nom" [ngClass]="{ 'is-invalid': submitted && f.nompara.errors }" formControlName="nompara">
+                            <div *ngIf="submitted && f.nompara.errors" class="invalid-feedback">
+                              <div *ngIf="f.nompara.errors.required">champ obligatoire</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-md-3 label-control" for="striped-form-2">Adresse</label>
+                          <div class="col-md-9">
+                            <input type="text" id="striped-form-2" class="form-control" name="nome" placeholder="adresse" [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }" formControlName="adresse">
+                            <div *ngIf="submitted && f.adresse.errors" class="invalid-feedback">
+                              <div *ngIf="f.adresse.errors.required">champ obligatoire</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-md-3 label-control" for="striped-form-3">Télephone</label>
+                          <div class="col-md-9">
+                            <input type="number" id="striped-form-3" class="form-control" name="nome" placeholder="telephone" [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }" formControlName="telephone">
+                            <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                              <div *ngIf="f.telephone.errors.required">champ obligatoire</div>
+                            </div>                   </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-md-3 label-control" for="striped-form-4">Description</label>
+                          <div class="col-md-9">
+                            <textarea type="text" id="striped-form-4" class="form-control" name="nome" placeholder="description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" formControlName="description" rows="3"></textarea>
+                            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                              <div *ngIf="f.description.errors.required">champ obligatoire</div>
+                            </div>                   </div>
+                        </div>
+
+                        <div class="form-group row" >
+                          <label class="col-md-3 label-control" >Ville</label>
+                          <div class="col-md-9" >
+                            <select  class="form-control" formControlName="idv">
+                              <option disabled >Ville</option>
+                              <option *ngFor="let v of  villesList"  value="{{v.id}}">{{v.nom}}</option>
+
+
+                            </select>
+                          </div>
+                        </div>
+                        <div class="foot mt-3" style="float: right">
+                          <button type="button" class="btn btn-secondary mr-2"  (click)="c('Close click')"><i class="ft-x mr-1"></i>Annuller</button>
+                          <button type="onSubmit" class="btn btn-primary " ><i class="ft-check-square mr-1"></i>Enregistrer</button>
+                        </div>
+
+                      </form>
+
+                    </div>
+                  </div>
+
+                  <!--<div class="modal-footer">-->
+                  <!--<button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>-->
+                  <!--</div>-->
+                </ng-template>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>

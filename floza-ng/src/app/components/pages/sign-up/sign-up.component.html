@@ -1,0 +1,107 @@
+<!-- Page banner Area -->
+<div class="page-banner bg-3">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-content">
+                    <h2>S'inscrire</h2>
+                    <ul>
+                        <li><a routerLink="/">Acceuil</a></li>
+                        <li>S'inscrire</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page banner Area -->
+
+<!-- Start Sign up Area -->
+<div class="sign-up-area ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <h2>Créer un Compte!</h2>
+        </div>
+
+        <div class="sign-up-form">
+            <form [formGroup]="registerForm">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="first_name" placeholder="Nom" formControlName="last_name">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="last_name" placeholder="Prénom" formControlName="first_name">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" id="username" placeholder="Entrer votre Username" formControlName="username">
+                </div>
+
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" placeholder=" Addresse Email" formControlName="email">
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" placeholder="Mot de passe" formControlName="password">
+                </div>
+
+                <div class="form-group row last mb-3" style="padding-left: 5%">
+                    <label class="col-md-3 label-control">Type : </label>
+                    <div class="col-md-9">
+                      <div class="input-group col-md-9">
+                        <div class="radio d-inline-block mr-2 mb-1">
+                          <input type="radio" id="striped-form-6" name="typeuser" value="Patient" checked formControlName="typeuser">
+                          <label for="striped-form-6">Patient</label>
+                        </div>
+                        <div class="radio d-inline-block" style="padding-left: 5%">
+                          <input type="radio" id="striped-form-7"  name="typeuser" value="Medecin" formControlName="typeuser">
+                          <label for="striped-form-7">Medecin</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                <div class="form-group form-check text-center">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Je suis d'accord avec les Termes & Conditions</label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn default-btn-one">S'inscrir</button>
+                    <p class="account-decs">Vous avez déjà un compte? <a routerLink="/sign-in">Se connecter</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Sign up  Area -->
+
+<!-- Newsletter Area -->
+<!--<div class="newsletter-area">-->
+<!--    <div class="container">-->
+<!--        <div class="newsletter-content">-->
+<!--            <div class="row align-items-center">-->
+<!--                <div class="col-lg-5 col-md-12">-->
+<!--                    <div class="newsletter-title">-->
+<!--                        <h3>Subscribe to our newsletter:</h3>-->
+<!--                        <p>Focused on the transport and logistic industry</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-7 col-md-12">-->
+<!--                    <form class="newsletter-form">-->
+<!--                        <input type="email" class="form-control" placeholder="Enter your email" name="EMAIL" required="" autocomplete="off">-->
+<!--                        <button type="submit" class="btn btn-primary">Subscribe</button>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!-- End Newsletter Area -->

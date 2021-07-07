@@ -1,0 +1,87 @@
+<!-- Page banner Area -->
+<div class="page-banner bg-3">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-content">
+                    <h2>Se connecter</h2>
+                    <ul>
+                        <li><a routerLink="/">Acceuil</a></li>
+                        <li>se connecter</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page banner Area -->
+
+<!-- Start Sign in Area -->
+<div class="sign-in-area ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <h2>se connecter à votre compte!</h2>
+        </div>
+        <ngb-alert type="light-danger" class="mb-2" *ngIf="isLoginFailed" (close)="isLoginFailed = false">
+            <p class="mb-0">Login failed!</p>
+          </ngb-alert>
+        <div class="sign-in-form"> 
+            <form [formGroup]="loginForm">
+                <div class="form-group">
+                    <input type="text" formControlName="username" class="form-control" placeholder="Username"
+                    [ngClass]="{ 'is-invalid': loginFormSubmitted && lf.username.invalid, 'is-valid': loginFormSubmitted && !lf.username.invalid }"
+                    required>
+                  <div *ngIf="loginFormSubmitted && (lf.username.invalid || lf.username.errors?.required)"
+                    class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> Champs obligatoire</div>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" formControlName="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': loginFormSubmitted && lf.password.invalid, 'is-valid': loginFormSubmitted && !lf.password.invalid }"
+                    required>
+                    <div *ngIf="loginFormSubmitted && (lf.password.invalid || lf.password.errors?.required)"
+                      class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> Champs obligatoire
+                    </div>
+                </div>
+
+                <div class="form-group form-check text-center">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Me rappeler</label>
+                </div> 
+
+                <div class="text-center">
+                    <div >
+
+                        <a  class="btn btn-primary" (click)="onSubmit()">Connexion</a>
+                      </div>
+                    <!-- <button (click)="onSubmit()" class="btn default-btn-one">Se connecter</button> -->
+                    <p class="account-decs">Vous n'avez pas de compte? <a routerLink="/sign-up">S'inscrire</a></p>
+                </div> 
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Sign in  Area -->
+
+<!-- Newsletter Area -->
+<!--<div class="newsletter-area">-->
+<!--    <div class="container">-->
+<!--        <div class="newsletter-content">-->
+<!--            <div class="row align-items-center">-->
+<!--                <div class="col-lg-5 col-md-12">-->
+<!--                    <div class="newsletter-title">-->
+<!--                        <h3>Subscribe to our newsletter:</h3>-->
+<!--                        <p>Focused on the transport and logistic industry</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-7 col-md-12">-->
+<!--                    <form class="newsletter-form">-->
+<!--                        <input type="email" class="form-control" placeholder="Enter your email" name="EMAIL" required="" autocomplete="off">-->
+<!--                        <button type="submit" class="btn btn-primary">Subscribe</button>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!-- End Newsletter Area -->

@@ -1,0 +1,63 @@
+
+<div class="dialogComponent">
+    
+    <div mat-dialog-content >
+      <!-- Default form register -->
+    <form class="text-center border border-light p-5">
+        <p >Ajouter nouvelle </p>
+        <hr>
+    <div class="form-inline md-form form-sm">
+        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="chercher patient existant" aria-label="Search"
+    mdbInput>
+        <mdb-icon fas icon="search" aria-hidden="true"></mdb-icon>
+    </div>
+        
+        <hr>
+        <input type="number"  class="form-control" placeholder="N° Dossier" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+
+        <hr>
+  
+        <div class="form-row mb-4">
+          <div class="col">
+            <!-- First name -->
+            <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
+          </div>
+          <div class="col">
+            <!-- Last name -->
+            <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
+          </div>
+        </div>
+  
+        <!-- E-mail -->
+        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+  
+        <!-- Password -->
+        <input type="text" id="defaultRegisterFormAdress" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+        
+        <br>
+        <!-- Phone number -->
+        <input type="text" id="defaultRegisterPhoneTelephne" class="form-control" placeholder="Télephone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+        <br>
+        <select class="browser-default custom-select mb-4" >
+          <option value="ville" *ngFor="let v of villesList" placeholder="ville">{{v.nom}}</option>
+
+        </select>
+      
+        <!-- Message -->
+        <div class="form-group">
+          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Maladie"></textarea>
+        </div>
+      
+  
+        <!-- add button -->
+        <div mat-dialog-actions>
+            <button madbBtn class="my-4" color="elegant" (click)="onNoClick()">Annuler</button>
+            <button mdbBtn  type="submit" class="my-4" cdkFocusInitial>Ajouter</button>
+        </div>
+       
+      </form>
+
+    
+    </div>
+   
+</div>

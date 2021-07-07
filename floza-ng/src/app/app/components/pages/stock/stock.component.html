@@ -1,0 +1,433 @@
+<div class="privacy-policy ptb-100">
+    <div class="container">
+
+        <div class="section-title">
+            <span>Rendez vous managment</span>
+           
+        </div>
+        <ng-sidebar-container  #sidebar>
+       
+            <!-- A sidebar -->
+            <ng-sidebar [(opened)]="opened" mode="push">
+                <mat-nav-list>
+                   <a mat-list-item routerLink="/agenda" (click)="toggleSidebar()">
+                       <mdb-icon far icon="calendar-alt" size="1x"></mdb-icon> <span class="nav-caption">Agenda</span>
+                   </a>
+                   <a mat-list-item routerLink="/patient" (click)="toggleSidebar()">
+                       <mdb-icon fas icon="user-friends"  size="1x"></mdb-icon> <span class="nav-caption">Patients</span>   
+                   </a>
+                   <a mat-list-item routerLink="/rendez-vous" (click)="toggleSidebar()">
+                       <mdb-icon far icon="calendar-check" ></mdb-icon><span class="nav-caption">rendez-vous</span>
+                   </a>
+                   <a mat-list-item routerLink="/ordonnance" (click)="toggleSidebar()">  
+                       <mdb-icon fas icon="file-signature" size="1x"></mdb-icon><span class="nav-caption">Ordonnance</span>
+                   </a>
+                   <a mat-list-item routerLink="/rendez-vous" (click)="toggleSidebar()">  
+                       <mdb-icon fas icon="notes-medical" size="1x"></mdb-icon><span class="nav-caption">Compte Rendu</span>
+                   </a>
+                   
+                   <a mat-list-item routerLink="/courrier" (click)="toggleSidebar()">  
+                       <mdb-icon far icon="envelope" size="1x"></mdb-icon><span class="nav-caption">Courrier</span>
+                   </a>
+                   
+                   <a mat-list-item routerLink="/urgence" (click)="toggleSidebar()">
+                       <mdb-icon fas icon="bullhorn" size="1x"></mdb-icon> <span class="nav-caption">Urgence</span>
+                   </a>
+                   <a mat-list-item routerLink="/stock" (click)="toggleSidebar()">
+                       <mdb-icon fas icon="archive" size="1x"></mdb-icon> <span class="nav-caption">Stock</span>   
+                   </a>
+                   <a mat-list-item routerLink="/factures" (click)="toggleSidebar()">
+                       <mdb-icon fas icon="file-contract" size="1x"></mdb-icon><span class="nav-caption">Facturation</span>
+                   </a>
+                   <a mat-list-item routerLink="/statistique" (click)="toggleSidebar()">
+                       <mdb-icon fas icon="poll" size="1x"></mdb-icon><span class="nav-caption">Statistiques</span>
+                   </a>
+                   <a mat-list-item routerLink="/notif"  (click)="toggleSidebar()">
+                       <mdb-icon far icon="bell" size="1x"></mdb-icon><span class="nav-caption">Notification</span>
+                   </a>
+                   <a mat-list-item routerLink="/parametrage" (click)="toggleSidebar()">
+                       <mdb-icon fas icon="cogs" size="1x"></mdb-icon><span class="nav-caption">Parametrage</span>
+                   </a>
+                 </mat-nav-list>
+       
+               
+              </ng-sidebar>
+       
+            <!-- Page content -->
+            <div ng-sidebar-content>
+                <nav  class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a (click)="toggleSidebar()"><mdb-icon fas icon="bars" style="color: blueviolet;" size="2x"></mdb-icon></a>
+                 
+                   <!-- Collapsible wrapper -->
+               
+                   <!-- Right elements -->
+                   <div class="row d-flex align-items-center">
+                       <div class="col"><button mat-icon-button >
+                          <mat-icon >group_add</mat-icon>  
+                        </button>  
+                      </div> 
+                      <div class="col">
+                          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                              <mat-icon>account_circle</mat-icon>
+                            </button>
+                            <mat-menu #menu="matMenu">
+                               <button mat-menu-item >
+                                   <mat-icon>account_box</mat-icon>
+                                   <span>{{user.first_name}}</span>
+                                 </button>
+                              <button mat-menu-item >
+                               <mat-icon>exit_to_app</mat-icon>
+                                <span>se déconnecter</span>
+                              </button>
+                            </mat-menu>
+                            
+                      </div>
+                   </div>
+                   <!-- Right elements -->
+                 </div>
+                 </nav>
+              
+              <div class="wrapper">
+                <!-- Sidebar -->
+                <div class="privacy-policy-text">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="blog-details-desc">
+                                <!-- <span> Liste crénaux rendez-vous </span> -->
+                                <div class="article-image">
+                                    <!-- <img src="assets/img/blog/blog-details.jpg" alt="image"> -->
+                                </div>
+            
+                                <div class="article-content">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            
+                                            <div style="display: block">
+                                                <canvas >
+                                                </canvas>
+                                              </div>
+                                              
+                                        </div>
+                                      </div>
+                                    <!-- <div class="entry-meta">
+                                        <ul>
+                                            <li>
+                                                <i class='bx bx-folder-open'></i> 
+                                                <span>Category</span>
+                                                <a routerLink="/blog">Transport</a>
+                                            </li>
+                                            <li>
+                                               <i class='bx bx-group'></i>
+                                              <span>View</span>
+                                                
+                                            </li>
+                                            <li>
+                                                <i class='bx bx-calendar'></i>
+                                                <span>Last Updated</span>
+                                               
+                                            </li> 
+                                        </ul> 
+                                    </div>-->
+                                    <!-- <h3>We ensure you best the quality services</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in  sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam.</p>
+                                    <ul class="wp-block-gallery columns-3">
+                                        <li class="blocks-gallery-item">
+                                            <figure>
+                                                <img src="assets/img/blog/blog1.jpg" alt="image">
+                                            </figure>
+                                        </li>
+                                        <li class="blocks-gallery-item">
+                                            <figure>
+                                                <img src="assets/img/blog/blog2.jpg" alt="image">
+                                            </figure>
+                                        </li>
+                                        <li class="blocks-gallery-item">
+                                            <figure>
+                                                <img src="assets/img/blog/blog3.jpg" alt="image">
+                                            </figure>
+                                        </li>
+                                    </ul>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                                    <blockquote class="wp-block-quote">
+                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                        <cite>Tom Cruise</cite>
+                                    </blockquote>
+                                    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences.</p>
+                                    <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure</p> -->
+                                </div>
+            <!-- 
+                                <div class="article-footer">
+                                    <div class="article-tags">
+                                        <span><i class='bx bx-purchase-tag'></i></span>
+                                        <a routerLink="/blog">Fashion</a>,
+                                        <a routerLink="/blog">Games</a>,
+                                        <a routerLink="/blog">Travel</a>
+                                    </div>
+            
+                                    <div class="article-share">
+                                        <ul class="social">
+                                            <li><span>Share:</span></li>
+                                            <li><a href="#" class="facebook" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                                            <li><a href="#" class="twitter" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                                            <li><a href="#" class="linkedin" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                                            <li><a href="#" class="instagram" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div> -->
+            <!-- 
+                                <div class="comments-area">
+                                    <h3 class="comments-title">2 Comments:</h3>
+            
+                                    <ol class="comment-list">
+                                        <li class="comment">
+                                            <div class="comment-body">
+                                                <footer class="comment-meta">
+                                                    <div class="comment-author vcard">
+                                                        <img src="assets/img/blog/blog-comments1.jpg" class="avatar" alt="image">
+                                                        <b class="fn">John Jones</b>
+                                                        <span class="says">says:</span>
+                                                    </div>
+            
+                                                    <div class="comment-metadata">
+                                                        <span>April 24, 2019 at 10:59 am</span>
+                                                    </div>
+                                                </footer>
+            
+                                                <div class="comment-content">
+                                                    <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.</p>
+                                                </div>
+            
+                                                <div class="reply">
+                                                    <a routerLink="/" class="comment-reply-link">Reply</a>
+                                                </div>
+                                            </div>
+            
+                                            <ol class="children">
+                                                <li class="comment">
+                                                    <div class="comment-body">
+                                                        <footer class="comment-meta">
+                                                            <div class="comment-author vcard">
+                                                                <img src="assets/img/blog/blog-comments2.jpg" class="avatar" alt="image">
+                                                                <b class="fn">Steven Smith</b>
+                                                                <span class="says">says:</span>
+                                                            </div>
+                
+                                                            <div class="comment-metadata">
+                                                                <span>April 24, 2019 at 10:59 am</span>
+                                                            </div>
+                                                        </footer>
+                
+                                                        <div class="comment-content">
+                                                            <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.</p>
+                                                        </div>
+                
+                                                        <div class="reply">
+                                                            <a routerLink="/" class="comment-reply-link">Reply</a>
+                                                        </div>
+                                                    </div>
+            
+                                                    <ol class="children">
+                                                        <li class="comment">
+                                                            <div class="comment-body">
+                                                                <footer class="comment-meta">
+                                                                    <div class="comment-author vcard">
+                                                                        <img src="assets/img/blog/blog-comments3.jpg" class="avatar" alt="image">
+                                                                        <b class="fn">Sarah Taylor</b>
+                                                                        <span class="says">says:</span>
+                                                                    </div>
+                        
+                                                                    <div class="comment-metadata">
+                                                                        <span>April 24, 2019 at 10:59 am</span>
+                                                                    </div>
+                                                                </footer>
+                        
+                                                                <div class="comment-content">
+                                                                    <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.</p>
+                                                                </div>
+                        
+                                                                <div class="reply">
+                                                                    <a routerLink="/" class="comment-reply-link">Reply</a>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                            </ol>
+                                        </li>
+            
+                                        <li class="comment">
+                                            <div class="comment-body">
+                                                <footer class="comment-meta">
+                                                    <div class="comment-author vcard">
+                                                        <img src="assets/img/blog/blog-comments1.jpg" class="avatar" alt="image">
+                                                        <b class="fn">John Doe</b>
+                                                        <span class="says">says:</span>
+                                                    </div>
+            
+                                                    <div class="comment-metadata">
+                                                        <span>April 24, 2019 at 10:59 am</span>
+                                                    </div>
+                                                </footer>
+            
+                                                <div class="comment-content">
+                                                    <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.</p>
+                                                </div>
+            
+                                                <div class="reply">
+                                                    <a routerLink="/" class="comment-reply-link">Reply</a>
+                                                </div>
+                                            </div>
+            
+                                            <ol class="children">
+                                                <li class="comment">
+                                                    <div class="comment-body">
+                                                        <footer class="comment-meta">
+                                                            <div class="comment-author vcard">
+                                                                <img src="assets/img/blog/blog-comments2.jpg" class="avatar" alt="image">
+                                                                <b class="fn">James Anderson</b>
+                                                                <span class="says">says:</span>
+                                                            </div>
+                
+                                                            <div class="comment-metadata">
+                                                                <span>April 24, 2019 at 10:59 am</span>
+                                                            </div>
+                                                        </footer>
+                
+                                                        <div class="comment-content">
+                                                            <p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.</p>
+                                                        </div>
+                
+                                                        <div class="reply">
+                                                            <a routerLink="/" class="comment-reply-link">Reply</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+            
+                                    <div class="comment-respond">
+                                        <h3 class="comment-reply-title">Leave a Reply</h3>
+            
+                                        <form class="comment-form">
+                                            <p class="comment-notes">
+                                                <span id="email-notes">Your email address will not be published.</span>
+                                                Required fields are marked 
+                                                <span class="required">*</span>
+                                            </p>
+                                            <p class="comment-form-author">
+                                                <label>Name <span class="required">*</span></label>
+                                                <input type="text" id="author" placeholder="Your Name*" name="author" required="required">
+                                            </p>
+                                            <p class="comment-form-email">
+                                                <label>Email <span class="required">*</span></label>
+                                                <input type="email" id="email" placeholder="Your Email*" name="email" required="required">
+                                            </p>
+                                            <p class="comment-form-url">
+                                                <label>Website</label>
+                                                <input type="url" id="url" placeholder="Website" name="url">
+                                            </p>
+                                            <p class="comment-form-comment">
+                                                <label>Comment</label>
+                                                <textarea name="comment" id="comment" cols="45" placeholder="Your Comment..." rows="5" maxlength="65525" required="required"></textarea>
+                                            </p>
+                                            <p class="comment-form-cookies-consent">
+                                                <input type="checkbox" value="yes" name="wp-comment-cookies-consent" id="wp-comment-cookies-consent">
+                                                <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label>
+                                            </p>
+                                            <p class="form-submit">
+                                                <input type="submit" name="submit" id="submit" class="submit" value="Post A Comment">
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+            
+                        <div >
+                            <div class="widget-area">
+                               
+            
+                                <!-- <div class="widget widget_posts_thumb">
+                                    <h3 class="widget-title">Popular Posts</h3>
+            
+                                    <div class="item">
+                                        <a routerLink="/blog-details" class="thumb">
+                                            <span class="fullimage cover bg1" role="img"></span>
+                                        </a>
+                                        <div class="info">
+                                            <span>June 10, 2020</span>
+                                            <h4 class="title usmall"><a routerLink="/blog-details">The Data Surrounding Higher Education</a></h4>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+            
+                                    <div class="item">
+                                        <a routerLink="/blog-details" class="thumb">
+                                            <span class="fullimage cover bg2" role="img"></span>
+                                        </a>
+                                        <div class="info">
+                                            <span>June 21, 2020</span>
+                                            <h4 class="title usmall"><a routerLink="/blog-details">Conversion Rate the Sales Funnel Optimization</a></h4>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+            
+                                    <div class="item">
+                                        <a routerLink="/blog-details" class="thumb">
+                                            <span class="fullimage cover bg3" role="img"></span>
+                                        </a>
+                                        <div class="info">
+                                            <span>June 30, 2020</span>
+                                            <h4 class="title usmall"><a routerLink="/blog-details">Business Data is changing the world’s Energy</a></h4>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div> -->
+            
+                                <!-- <div class="widget widget_categories">
+                                    <h3 class="widget-title">Categories</h3>
+            
+                                    <ul>
+                                        <li><a routerLink="/blog">Design <span class="post-count">(03)</span></a></li>
+                                        <li><a routerLink="/blog">Lifestyle <span class="post-count">(05)</span></a></li>
+                                        <li><a routerLink="/blog">Script <span class="post-count">(10)</span></a></li>
+                                        <li><a routerLink="/blog">Device <span class="post-count">(08)</span></a></li>
+                                        <li><a routerLink="/blog">Tips <span class="post-count">(01)</span></a></li>
+                                    </ul>
+                                </div> -->
+            
+                                <!-- <div class="widget widget_tag_cloud">
+                                    <h3 class="widget-title">Popular Tags</h3>
+            
+                                    <div class="tagcloud">
+                                        <a routerLink="/blog">Business <span class="tag-link-count"> (3)</span></a>
+                                        <a routerLink="/blog">Design <span class="tag-link-count"> (3)</span></a>
+                                        <a routerLink="/blog">Aike <span class="tag-link-count"> (2)</span></a>
+                                        <a routerLink="/blog">Fashion <span class="tag-link-count"> (2)</span></a>
+                                        <a routerLink="/blog">Travel <span class="tag-link-count"> (1)</span></a>
+                                        <a routerLink="/blog">Smart <span class="tag-link-count"> (1)</span></a>
+                                        <a routerLink="/blog">Marketing <span class="tag-link-count"> (1)</span></a>
+                                        <a routerLink="/blog">Tips <span class="tag-link-count"> (2)</span></a>
+                                    </div>
+                                </div>  -->
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            
+        </div>
+            
+            </div>
+       
+          </ng-sidebar-container>
+
+
+        <!-- <div class="privacy-policy-text">
+            
+        </div> -->
+    </div>
+</div>

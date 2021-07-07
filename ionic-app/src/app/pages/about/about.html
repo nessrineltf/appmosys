@@ -1,0 +1,58 @@
+<ion-content>
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="presentPopover($event)">
+          <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="about-header">
+    <!-- Instead of loading an image each time the select changes, use opacity to transition them -->
+    <div class="about-image madison" [ngStyle]="location === 'madison' && {'opacity': '1'}"></div>
+    <div class="about-image austin" [ngStyle]="location === 'austin' && {'opacity': '1'}"></div>
+    <div class="about-image chicago" [ngStyle]="location === 'chicago' && {'opacity': '1'}"></div>
+    <div class="about-image seattle" [ngStyle]="location === 'seattle' && {'opacity': '1'}"></div>
+  </div>
+
+  <div class="about-info-card">
+    <div class="about-safe-text" style="padding: 20px">
+      <h3 class="ion-padding-top ion-padding-start">Qui somme nous ?</h3>
+      <p> MO-SYS est une plateforme innovante qui vous permet de trouver rapidement un médecin le plus proche de chez vous et de prendre un rendez-vous en ligne gratuitement. </p>
+      <p> MO-SYS est le moteur de recherche pour trouver une pharmacie, un radiologue, un laboratoire, etc. à proximité.
+      </p>
+      <p> MO-SYS vous permet de clavarder directement en ligne avec les médecins tout en respectant les conditions de confidentialité. </p>
+    </div>
+  </div>
+    <div class="about-info-card">
+      <h3 class="ion-padding-top ion-padding-start">Nos Missions</h3>
+     <ul>
+        <li><i class='bx bx-check'></i>Nous vous disposant une plateforme innovante qui vous permet de trouver rapidement un médecin le plus proche de chez vous et de prendre rendez-vous en ligne gratuitement.</li>
+        <li><i class='bx bx-check'></i>Vous offrère un Moteur de recherche pour trouver une pharmacie,un radiologue, un laboratoire , etc à proximité.
+        </li>
+        <li><i class='bx bx-check'></i>Nous vous permet de discuter en ligne directement aux médecins en respectant les termes de confidentialité.</li>
+        <li><i class='bx bx-check'></i>Un service complet de gestion de cabinet médical,de clinique , qui optimise votre organisation et vous fait gagner du temps.</li>
+        <li><i class='bx bx-check'></i> Partagons vos disponibilités en temps réel avec vos patients selon vos critères, tout en gardant la main sur votre agenda médical.</li>
+        <li><i class='bx bx-check'></i> Nous vous permet d’entrer en contact directement avec des patients et de répondre à leurs interrogations..</li>
+      </ul>
+    </div>
+
+    <h3 class="ion-padding-top ion-padding-start">Nos Promesses</h3>
+
+    <div class="about-info-card">
+      <ul>
+        <li><i class='bx bx-check'></i>Amélioration de l'accès aux soins en mettant à votre disposition des outils simples et intuitifs pour que chacun devienne acteur de sa santé et de son bien-être.</li>
+        <li><i class='bx bx-check'></i> Prise des RDV gratuitement en ligne </li>
+        <li><i class='bx bx-check'></i> Sécurisation de vos données et vos DM</li>
+        <li><i class='bx bx-check'></i>Gain de Temps  </li>
+        <li><i class='bx bx-check'></i>Service rapide</li>
+        <!--                        <li><i class='bx bx-check'></i> </li>-->
+      </ul>
+    </div>
+
+</ion-content>

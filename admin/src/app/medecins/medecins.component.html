@@ -1,0 +1,129 @@
+<section id="extended">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Liste médecins</h4>
+        </div>
+        <div class="card-content">
+          <div class="card-body table-responsive">
+            <button type="button" class="btn btn-primary round mr-1 mb-1" style="float: right" (click)="open(content)">Ajouter un nouveaux medecin</button>
+            <ng-template #content let-c="close" let-d="dismiss" style="background-color: #0B1F3A">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" style="color: black;margin: 0 auto">Ajouter un medecin</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true" style="color: white">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form class="striped-rows">
+                    <div class="form-group row">
+                      <label class="col-md-3 label-control" for="striped-form-1">Nom</label>
+                      <div class="col-md-9">
+                        <input type="text" id="striped-form-1" class="form-control" name="fullname" placeholder="Full Name">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 label-control" for="striped-form-2">Prénom</label>
+                      <div class="col-md-9">
+                        <input type="text" id="striped-form-2" class="form-control" name="title" placeholder="Title">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 label-control" for="striped-form-3">Télephone</label>
+                      <div class="col-md-9">
+                        <input type="text" id="striped-form-3" class="form-control" name="company3" placeholder="Company">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 label-control" for="striped-form-4">Email</label>
+                      <div class="col-md-9">
+                        <input type="email" id="striped-form-4" class="form-control" name="email2" placeholder="E-mail">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 label-control" for="striped-form-5">Mot de passe</label>
+                      <div class="col-md-9">
+                        <input type="number" id="striped-form-5" class="form-control" name="contact" placeholder="Contact Number">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 label-control" for="striped-form-5">Spécialite</label>
+                      <div class="col-md-9">
+                        <select  class="form-control">
+                          <option value="Medium">Spécialite</option>
+                          <option *ngFor="let group of specialites" [label]="group.nom_specialite"></option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                    <label class="col-md-3 label-control" for="striped-form-6">Sexe</label>
+                    <select id="striped-form-6" name="priority" class="col-md-9">
+                    <option value="Low">Homme</option>
+                    <option value="Medium">Femme</option>
+                    </select>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-md-3 label-control" for="striped-form-6">Sexe</label>
+                      <select id="striped-form-6" name="priority" class="col-md-9">
+                      <option value="Low">Célibataire</option>
+                      <option value="Medium">Marié</option>
+                      </select>
+                      </div>
+                    <div class="foot" >
+                      <button type="button" class="btn btn-secondary mr-2"  (click)="c('Close click')"><i class="ft-x mr-1"></i>Annuller</button>
+                      <button  type="onSubmit" class="btn btn-primary"><i class="ft-check-square mr-1"></i>Enregistrer</button>
+
+                    </div>
+
+                  </form>
+
+                </div>
+              </div>
+
+              <!--<div class="modal-footer">-->
+              <!--<button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>-->
+              <!--</div>-->
+            </ng-template>
+            <table class="table text-center m-0">
+              <thead>
+              <tr>
+                <th>Image</th>
+                <th>Nom</th>
+                <th>prénom</th>
+                <th>Spécialité</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Adresse</th>
+                <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let med of medecinliste">
+                <td><img src="../../assets/img/freight11.jpg" alt="product" style="height: 75px;"></td>
+                <td>{{med.first_name}}</td>
+                <td>{{med.last_name}}</td>
+                <td>{{med.specialite.nom_specialite}}</td>
+                <td>{{med.email}}</td>
+                <td>{{med.telephone}}</td>
+                <td>{{med.adresse}}</td>
+                <td class="text-truncate">
+                  <a href="javascript:;" class="info p-0">
+                    <i class="ft-user font-medium-3 mr-2"></i>
+                  </a>
+                  <a href="javascript:;" class="danger p-0">
+                    <i class="ft-x font-medium-3"></i>
+                  </a>
+                </td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
